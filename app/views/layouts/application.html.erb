@@ -9,7 +9,7 @@
   <%= csrf_meta_tags %>
   <nav>
     <div class="nav-wrapper blue darken-3">
-      <a href="#" class="brand-logo right">Bucket</a>
+      <a class="brand-logo right">Bucket</a>
       <ul id="nav-mobile" class="left hide-on-sm-and-down">
       <% if current_user %>
         <li><%= link_to('Profile', profile_path(current_user.id)) %></li>

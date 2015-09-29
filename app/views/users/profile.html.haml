@@ -1,2 +1,10 @@
-%h1 Users#profile
-%p Find me in app/views/users/profile.html.haml
+.container
+  %h1.center-align Welcome
+  -@goals.each do |goal|
+    %h2 = goal.title
+    %p = goal.descrption
+    %p = goal.location
+    %p = goal.completed
+    %a.btn-floating.btn-large.waves-effect.waves-light.blue.darken-3
+      %i.material-icons add
+  =link_to 'New', new_user_goal_path(@user), class: 'btn-floating btn-large waves-effect waves-light blue darken-3 right'
