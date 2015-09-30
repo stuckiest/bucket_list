@@ -1,2 +1,6 @@
-%h1 Goals#new
-%p Find me in app/views/goals/new.html.haml
+%header
+  %h1 Bucket List: Create a new Goal!
+  %p.options= link_to 'Profile', profile_path(current_user.id)
+
+
+= render partial: 'goals/goalform'

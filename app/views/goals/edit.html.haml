@@ -1,2 +1,6 @@
-%h1 Goals#edit
-%p Find me in app/views/goals/edit.html.haml
+%header
+  %h1 Edit your buket list goals!
+  %p.options= link_to 'Profile', profile_path(current_user.id)
+
+
+= render partial: 'goals/goalform'

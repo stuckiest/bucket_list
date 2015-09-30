@@ -8,6 +8,7 @@ class GoalsController < ApplicationController
   def create
     @goal = Goal.new(goal_params)
     @user = User.find(params[:user_id])
+
     if @goal.save
       redirect_to user_path(@user)
     else
@@ -47,7 +48,7 @@ class GoalsController < ApplicationController
 
   private
   def goal_params
-    params.require(:goal).permit(:title, :description, :location, :completed, :user_id, :type, :category)
+    params.require(:goal).permit(:title, :description, :location, :completed, :user_id, :category => [])
   end
 
 end
