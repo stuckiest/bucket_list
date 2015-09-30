@@ -17,8 +17,8 @@ class GoalsController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
-    @goal = Goal.find(params[:user_id])  
+    @user = User.find(params[:user_id])
+    @goal = Goal.find(params[:id])  
   end
 
   def update
