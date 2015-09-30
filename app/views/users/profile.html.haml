@@ -1,5 +1,7 @@
 .container
-  %h1.center-align Welcome
+  =link_to 'New', new_user_goal_path(@user), class: 'btn-floating btn-large waves-effect waves-light blue darken-3 right'
+  %h1.center-align Welcome #{@user.first_name}
+  
   - @goals.each do |goal|
     %h2 
       = goal.title
@@ -9,6 +11,8 @@
       = goal.location
     %p 
       = goal.completed
-    %a.btn-floating.btn-large.waves-effect.waves-light.blue.darken-3
-      %i.material-icons add
-  =link_to 'New', new_user_goal_path(@user), class: 'btn-floating btn-large waves-effect waves-light blue darken-3 right'
+    %p
+      =link_to 'Edit', edit_user_goal_path(goal, @user), class: 'btn'
+      -# 'btn-floating.btn-large.waves-effect.waves-light.blue.darken-3'
+      -# %i.material-icons add
+      
