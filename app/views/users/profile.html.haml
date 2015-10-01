@@ -18,8 +18,5 @@
         |
     %p
       =link_to 'Edit', edit_user_goal_path(@user, goal), class: 'btn-floating btn-large waves-effect waves-light blue darken-3'
-      =link_to 'Delete', profile_path(current_user.id), method: :delete, class: 'btn-floating btn-large waves-effect waves-light blue darken-3'
-      -# 'btn-floating.btn-large.waves-effect.waves-light.blue.darken-3'
-      -# %i.material-icons add
-
-      -# <%= link_to 'Destroy', owner_path(owner), method: :delete, data: { confirm: 'Are you sure?' } %>
+      -# path does not work for delete
+      =link_to 'Delete', user_goal_path(@user, goal), method: :delete, class: 'btn-floating btn-large waves-effect waves-light blue darken-3'
