@@ -1,2 +1,8 @@
-%h1 Users#index
-%p Find me in app/views/users/index.html.haml
+%h2 Users
+-@users.each do |user|
+  %h3 
+    = user.first_name
+    = user.last_name
+    = user.email
+  %p  
+    = link_to 'Show user', user_path(user)

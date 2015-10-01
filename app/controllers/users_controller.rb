@@ -5,13 +5,14 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
-    @goals = Goal.where(user_id: params[:id])
+    @user = User.find(params[:id]) #passing Id for current_user
+    # @goals = Goal.where(user_id: params[:id]) 
+    @user_goals = @user.goals
   end
 
   def profile
-    @user = User.find(params[:id])
-    @goals = Goal.where(user_id: current_user)
+     @user = User.where(params[:id])
+     @goals = Goal.where(user_id: current_user)
   end
 
   private
