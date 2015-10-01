@@ -2,9 +2,9 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  get 'users/:id', to: 'users#profile', as: :profile
+  get 'users/:id/profile', to: 'users#profile', as: :profile
 
-  resources :users do
+  resources :users, only: [:show] do
     resources :goals
   end
 
