@@ -1,29 +1,29 @@
-= form_for [@user, @goal] do |f| 
-  = f.hidden_field :user_id 
+= form_for [@user, @goal] do |f|
+  = f.hidden_field :user_id
 
-  = f.label :title 
-  = f.text_field :title 
+  = f.label :title
+  = f.text_field :title
   %br
 
-  = f.label :description 
-  = f.text_field :description 
+  = f.label :description
+  = f.text_field :description
   %br
 
-  = f.label :location 
-  = f.text_field :location 
+  = f.label :location
+  = f.text_field :location
   %br
 
-  %p Is it done:
-  = f.radio_button :completed, true 
-  = f.label :completed, "Yes", :value => "true" 
+  %p Is it completed:
+  = f.radio_button :completed, true
+  = f.label :completed, "Yes", :value => "true"
 
-  = f.radio_button :completed, false 
-  = f.label :completed, "No", :value => "false" 
+  = f.radio_button :completed, false
+  = f.label :completed, "No", :value => "false"
   %br
   -# <hr />
 
-  -# = f.label :type 
-  -# = f.text_field :type 
+  -# = f.label :type
+  -# = f.text_field :type
   -# %br
 
   -# %f.select
@@ -43,4 +43,4 @@
 
   = f.select :category, [['Solo', 'Solo'], ['Group', 'Group'], ['Outdoor', 'Outdoor'], ['Arts&Culture', 'Arts&Culture'], ['Tech', 'Tech'], ['Historical', 'Historical'], ['Adventure', 'Adventure'], ['Culinary', 'Culinary'], ['Dangerous', 'Dangerous'], ['Spiritual', 'Spiritual'], ['Geek', 'Geek'], ['Travel', 'Travel']], {}, { :multiple => true, class: 'browser-default' }
 
-  = f.submit 
+  = f.submit
