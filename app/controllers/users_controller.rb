@@ -11,8 +11,8 @@ class UsersController < ApplicationController
   end
 
   def profile
-     @user = User.where(params[:id])
-     @goals = Goal.where(user_id: current_user)
+     @user = current_user
+     @goals = @user.goals
   end
 
   private
