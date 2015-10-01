@@ -4,6 +4,7 @@ ruby '2.2.2'
 gem 'materialize-sass'
 gem 'devise', "~>3.4.0"
 gem 'haml-rails', "~>0.9"
+gem 'omniauth-facebook'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
 # Use postgresql as the database for Active Record
