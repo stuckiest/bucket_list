@@ -1,25 +1,32 @@
-= form_for [@user, @goal] do |f|
-  = f.hidden_field :user_id
+.container
+  = form_for [@user, @goal] do |f|
+    = f.hidden_field :user_id
 
-  = f.label :title
-  = f.text_field :title
-  %br
+    = f.label :title, class: 'white-text'
+    = f.text_field :title
+    %br
 
-  = f.label :description
-  = f.text_field :description
-  %br
+    = f.label :description, class: 'white-text'
+    = f.text_field :description
+    %br
 
-  = f.label :location
-  = f.text_field :location
-  %br
+    = f.label :location, class: 'white-text'
+    = f.text_field :location
+    %br
 
-  %p Is it completed:
-  = f.radio_button :completed, true
-  = f.label :completed, "Yes", :value => "true"
+    %p.white-text Is it completed:
+    = f.radio_button :completed, true
+    = f.label :completed, "Yes", :value => "true"
 
-  = f.radio_button :completed, false
-  = f.label :completed, "No", :value => "false"
-  %br
+    = f.radio_button :completed, false
+    = f.label :completed, "No", :value => "false"
+    %br
+
+    = f.select :category, [['Solo', 'Solo'], ['Group', 'Group'], ['Outdoor', 'Outdoor'], ['Arts&Culture', 'Arts&Culture'], ['Tech', 'Tech'], ['Historical', 'Historical'], ['Adventure', 'Adventure'], ['Culinary', 'Culinary'], ['Dangerous', 'Dangerous'], ['Spiritual', 'Spiritual'], ['Geek', 'Geek'], ['Travel', 'Travel']], {}, { :multiple => true, class: 'browser-default' }
+    %div.btn-floating.btn-large.waves-effect.waves-light.blue.darken-3
+      = f.submit
+
+    -# =link_to 'Update', update_user_goal_path(@user, goal), class: 'btn-floating btn-large waves-effect waves-light blue darken-3'
   -# <hr />
 
   -# = f.label :type
@@ -40,7 +47,3 @@
   -# <label for="pet_dog">I own a dog</label>
   -# <input id="pet_cat" name="pet_cat" type="checkbox" value="1" />
   -# <label for="pet_cat">I own a cat</label>
-
-  = f.select :category, [['Solo', 'Solo'], ['Group', 'Group'], ['Outdoor', 'Outdoor'], ['Arts&Culture', 'Arts&Culture'], ['Tech', 'Tech'], ['Historical', 'Historical'], ['Adventure', 'Adventure'], ['Culinary', 'Culinary'], ['Dangerous', 'Dangerous'], ['Spiritual', 'Spiritual'], ['Geek', 'Geek'], ['Travel', 'Travel']], {}, { :multiple => true, class: 'browser-default' }
-
-  = f.submit
