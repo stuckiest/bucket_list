@@ -31,10 +31,6 @@ RSpec.describe UsersController, type: :controller do
 
   # describe "user #params" do
   #   it "permits user params" do
-  #     first_name = "Test"
-  #     create_params = {user: {first_name: 'Test', last_name: 'Bond'}}
-  #     post :profile, create_params
-  #     expect(Person.last.first_name).to eq(first_name)
   #   end
   # end
 
