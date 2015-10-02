@@ -1,6 +1,6 @@
-%header.container
+.container
   %h1 Edit your buket list goals!
   %p.options= link_to 'Profile', profile_path(current_user.id)
 
 
-= render partial: 'goals/goalform'
+  = render partial: 'goals/goalform'

@@ -1,30 +1,33 @@
-.container
-  = form_for [@user, @goal] do |f|
-    = f.hidden_field :user_id
 
-    = f.label :title, class: 'white-text'
-    = f.text_field :title
-    %br
+= form_for [@user, @goal] do |f|
+  = f.hidden_field :user_id
 
-    = f.label :description, class: 'white-text'
-    = f.text_field :description
-    %br
+  = f.label :title, class: 'white-text'
+  = f.text_field :title
+  %br
 
-    = f.label :location, class: 'white-text'
-    = f.text_field :location
-    %br
+  = f.label :description, class: 'white-text'
+  = f.text_field :description
+  %br
 
-    %p.white-text Is it completed:
-    = f.radio_button :completed, true
-    = f.label :completed, "Yes", :value => "true"
+  = f.label :location, class: 'white-text'
+  = f.text_field :location
+  %br
 
-    = f.radio_button :completed, false
-    = f.label :completed, "No", :value => "false"
-    %br
+  %p.white-text Is it completed:
+  = f.radio_button :completed, true
+  = f.label :completed, "Yes", :value => "true"
 
-    = f.select :category, [['Solo', 'Solo'], ['Group', 'Group'], ['Outdoor', 'Outdoor'], ['Arts&Culture', 'Arts&Culture'], ['Tech', 'Tech'], ['Historical', 'Historical'], ['Adventure', 'Adventure'], ['Culinary', 'Culinary'], ['Dangerous', 'Dangerous'], ['Spiritual', 'Spiritual'], ['Geek', 'Geek'], ['Travel', 'Travel']], {}, { :multiple => true, class: 'browser-default' }
-    %div.btn-floating.btn-large.waves-effect.waves-light.blue.darken-3
-      = f.submit
+  = f.radio_button :completed, false
+  = f.label :completed, "No", :value => "false"
+  %br
+
+  .input-field.goals
+    = f.select :category, options_for_select([['Solo', 'Solo'], ['Group', 'Group'], ['Outdoor', 'Outdoor'], ['Arts&Culture', 'Arts&Culture'], ['Tech', 'Tech'], ['Historical', 'Historical'], ['Adventure', 'Adventure'], ['Culinary', 'Culinary'], ['Dangerous', 'Dangerous'], ['Spiritual', 'Spiritual'], ['Geek', 'Geek'], ['Travel', 'Travel']], { :multiple => true })
+  .input-field
+    = f.submit 'submit', class: 'btn-floating btn-large blue darken-3'
+
+  -# %div.btn-floating.btn-large.waves-effect.waves-light.blue.darken-3
 
     -# =link_to 'Update', update_user_goal_path(@user, goal), class: 'btn-floating btn-large waves-effect waves-light blue darken-3'
   -# <hr />
