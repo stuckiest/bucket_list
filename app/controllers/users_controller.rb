@@ -15,9 +15,9 @@ class UsersController < ApplicationController
      @goals = @user.goals
   end
 
-  private
-
-  def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :password)
-  end
+  # private
+  # devise handles this so we don't need it here.
+  # def user_params
+  #   params.require(:user).permit(:first_name, :last_name, :email, :password)
+  # end
 end
