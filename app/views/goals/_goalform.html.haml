@@ -3,15 +3,15 @@
   = f.hidden_field :user_id
 
   = f.label :title, class: 'white-text'
-  = f.text_field :title
+  = f.text_field :title, class: 'white-text'
   %br
 
   = f.label :description, class: 'white-text'
-  = f.text_field :description
+  = f.text_field :description, class: 'white-text'
   %br
 
   = f.label :location, class: 'white-text'
-  = f.text_field :location
+  = f.text_field :location, class: 'white-text'
   %br
 
   %p.white-text Is it completed:
@@ -22,7 +22,7 @@
   = f.label :completed, "No", :value => "false"
   %br
 
-  .input-field.goals
+  .input-field.goals.white-text
     = f.select :category, options_for_select([['Solo', 'Solo'], ['Group', 'Group'], ['Outdoor', 'Outdoor'], ['Arts&Culture', 'Arts&Culture'], ['Tech', 'Tech'], ['Historical', 'Historical'], ['Adventure', 'Adventure'], ['Culinary', 'Culinary'], ['Dangerous', 'Dangerous'], ['Spiritual', 'Spiritual'], ['Geek', 'Geek'], ['Travel', 'Travel']], { :multiple => true })
   .input-field
     = f.submit 'submit', class: 'btn-floating btn-large blue darken-3'

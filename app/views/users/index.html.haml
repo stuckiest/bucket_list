@@ -1,9 +1,8 @@
 .container
-  %h2 Users
+  %h4.center-align.white-text Users
   -@users.each do |user|
-    %h3
+    %h5.white-text
       = user.first_name
       = user.last_name
       = user.email
-      %p
-      = link_to 'Show user', user_path(user)
+    = link_to 'Show user', user_path(user), class: 'btn-floating btn-large waves-effect waves-light blue darken-3'
